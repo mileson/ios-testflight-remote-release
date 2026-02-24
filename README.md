@@ -18,7 +18,7 @@
 - `我现在不在电脑旁，帮我走远程内测发布`
 - `执行 internal_release，发到 Agent Internal Testing`
 
-## Agent 的执行流程（用户视角）
+## Agent 的执行流程
 
 1. 先预检项目和环境，确认能发布。
 2. 自动扫描并补齐材料，缺什么一次性告诉你。
@@ -28,8 +28,13 @@
 
 ## 你需要提前准备
 
-- iOS 项目可正常本地构建
-- App Store Connect 相关信息（如 Issuer ID、Key 文件等）
+- iOS 项目可正常本地构建，并且该项目至少有一次通过数据线连接 iPhone 真机成功安装运行（用于确保签名、设备信任与本地发布链路已验证）
+- App Store Connect API 凭证：
+  - 登录 [App Store Connect](https://appstoreconnect.apple.com/)
+  - 进入 `Users and Access`（用户和访问）
+  - 打开 `Integrations` → `App Store Connect API`
+  - 在页面中复制 `Issuer ID`
+  - 在 `Keys` 中创建 API Key，下载一次性 `.p8` 文件（文件名通常为 `AuthKey_<KEY_ID>.p8`，下载后请妥善保存）
 - 目标测试者邮箱（可多个）
 
 首次准备可参考：`references/newbie-guide.md`
@@ -40,8 +45,3 @@
 - Internal Group 分发状态
 - 测试者可见性校验结果
 - 首次安装与后续更新指引
-
-## 安全说明
-
-- 本仓库不包含真实密钥或生产凭证。
-- `data/memory.json` 与 `data/memory.md` 是本地运行记忆，不会作为开源内容发布。
