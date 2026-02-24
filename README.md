@@ -38,10 +38,3 @@
 - 目标测试者邮箱（可多个）
 
 首次准备可参考：`references/newbie-guide.md`
-
-## 结果你会拿到什么
-
-- 本次发布的版本信息（`MARKETING_VERSION` / `BUILD_NUMBER`）
-- Internal Group 分发状态
-- 测试者可见性校验结果
-- 首次安装与后续更新指引
