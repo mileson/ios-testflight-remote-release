@@ -1,0 +1,11 @@
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Runtime local memory (contains user-specific release context)
+data/memory.json
+data/memory.md
+
